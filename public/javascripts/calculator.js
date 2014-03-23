@@ -19,11 +19,7 @@ function createRequestObject(){
 //Our request object, http
 var http = createRequestObject();
 
-
-//Exports (Only for express?)
-//exports = module.exports = {};
-/*
-exports.check = function(value){
+function pressDigit(value){
 	switch(value){
 		case "0": { numString += "0"; break; }
 		case "1": { numString += "1"; break; }
@@ -37,7 +33,7 @@ exports.check = function(value){
 		case "9": { numString += "9"; break; }
 	}
 }
-*/
+
 
 function testalert(){
 alert("OK");
