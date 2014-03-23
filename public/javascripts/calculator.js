@@ -63,6 +63,7 @@ function disableEquals(){
 	document.getElementById('idEquals').disabled = true;
 }
 
+//Poorly programmed! Do better next time.
 function addition(){
 	if(operation == ""){
 		checkNumString();
@@ -71,24 +72,38 @@ function addition(){
 		numString = "";
 		disableOperations();
 	}
-	/*else
-	{
-		checkNumString();
-		http.open('get','http://localhost:3000/add?num1=' + num1 + '&num2=' + numString + '&junk=' = Math.random());
-
-		//Is this even possible?
-		http.onreadystatechange = function(){
-		var response = http.responseText;
-		alert(response);
-		num1 = response;
-		};
-		
-		num2 = "";
-		numString = "";
-		operation = "";
-		http.send(null);
-	}*/
 }
+
+function subtraction(){
+	if(operation == ""){
+		checkNumString();
+		num1 = numString;
+		operation = "-";
+		numString = "";
+		disableOperations();
+	}
+}
+
+function multiplication(){
+	if(operation == ""){
+		checkNumString();
+		num1 = numString;
+		operation = "*";
+		numString = "";
+		disableOperations();
+	}
+}
+
+function division(){
+	if(operation == ""){
+		checkNumString();
+		num1 = numString;
+		operation = "/";
+		numString = "";
+		disableOperations();
+	}
+}
+
 
 function calClear(){
 numString = "";
@@ -116,7 +131,7 @@ function equals(){
 function handleResult(){
 	if(http.readyState == 4){
 		var response = http.responseText;
-		clear();
+		calClear();
 		setDisplay(response);
 	}
 }
