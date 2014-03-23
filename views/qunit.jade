@@ -4,7 +4,26 @@ html
     title= title
     link(rel='stylesheet', href='/stylesheets/qunit.css')
     script(src='/javascripts/QUnit/qunit.js')
-    script(src='/javascripts/QUnit/tests.js')
+    script(src='/javascripts/calculator.js')
+    script.
+     test("pressDigit() with a single digit", function(){
+      pressDigit("1");
+      equal(numString,"1");
+     });
+
+     test("pressDigit() with two digits", function(){
+      pressDigit("2");
+      equal(numString,"12");
+     });
+   
+     test("Now a whole bunch of digits!", function(){
+      pressDigit("3");
+      pressDigit("4");
+      pressDigit("5");
+      pressDigit("6");
+      pressDigit("7");
+      equal(numString,"1234567");
+     });
   body
    #qunit
    #qunit-fixture
