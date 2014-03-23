@@ -1,6 +1,6 @@
 //Variables
-var num1 = 0;
-var num2 = 0; 
+var num1 = "";
+var num2 = "";
 var numString = "";
 
 //Ajax stuff. Hope this works...
@@ -34,11 +34,21 @@ function pressDigit(value){
 	}
 }
 
-
-function testalert(){
-alert("OK");
+function clear(){
+numString = "";
+num1 = "";
+num2 = "";
 }
 
-function testalert2(){
-alert("ALSO OK");
+function testAjax(a){
+	http.open('get','http://localhost:3000/test?a=ItWorks&junk=' + Math.random());
+	http.onreadystatechange = handleTest;
+	http.send(null);
+}
+
+function handleTest(){
+	if(http.readyState == 4){
+		var response = http.responseText;
+		alert(response);
+	}
 }
