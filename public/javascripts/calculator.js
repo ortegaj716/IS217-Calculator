@@ -2,6 +2,7 @@
 var num1 = "";
 var num2 = "";
 var numString = "";
+var operation = "";
 
 //Ajax stuff. Hope this works...
 function createRequestObject(){
@@ -32,12 +33,46 @@ function pressDigit(value){
 		case "8": { numString += "8"; break; }
 		case "9": { numString += "9"; break; }
 	}
+
+	document.GetElementById('divDisplay').innerHTML = numString;
+}
+
+//Convenience function
+function checkNumString(){
+	if(numString == "")
+	numString = "0";
+}
+
+function addition(){
+	if(operation == ""){
+		checkNumString();
+		num1 = numString;
+		operation = "+";
+		numString = "";
+	}
+	else
+	{
+		checkNumString();
+		http.open('get','http://localhost:3000/add?num1=' + num1 + '&num2=' + numString + '&junk=' = Math.random());
+
+		//Is this even possible?
+		http.onreadystatechange = function(){
+		var response = http.responseText;
+		alert(response);
+		num1 = response;
+		};
+		
+		num2 = "";
+		numString = "";
+		http.send(null);
+	}
 }
 
 function clear(){
 numString = "";
 num1 = "";
 num2 = "";
+operation = "";
 }
 
 function testAjax(a){

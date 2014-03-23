@@ -4,19 +4,19 @@ block content
   h1 IS217 Calculator
   #divWrapper
    #divDisplay
-   button.classDigit(type='button', value='7', onclick='testalert()') 7
-   button.classDigit(type='button', value='8', onclick='testalert2()') 8
-   button.classDigit(type='button', value='9', onclick='testAjax("abc")') 9
-   button.classDigit(type='button', value='+') +
-   button.classDigit(type='button', value='4') 4
-   button.classDigit(type='button', value='5') 5
-   button.classDigit(type='button', value='6') 6
+   button.classDigit(type='button', value='7', onclick='pressDigit("7")') 7
+   button.classDigit(type='button', value='8', onclick='pressDigit("8")') 8
+   button.classDigit(type='button', value='9', onclick='pressDigit("9")') 9
+   button.classDigit(type='button', value='+', onclick='addition()') +
+   button.classDigit(type='button', value='4', onclick='pressDigit("4")') 4
+   button.classDigit(type='button', value='5', onclick='pressDigit("5")') 5
+   button.classDigit(type='button', value='6', onclick='pressDigit("6")') 6
    button.classDigit(type='button', value='-') -
-   button.classDigit(type='button', value='1') 1
-   button.classDigit(type='button', value='2') 2
-   button.classDigit(type='button', value='3') 3
+   button.classDigit(type='button', value='1', onclick='pressDigit("1")') 1
+   button.classDigit(type='button', value='2', onclick='pressDigit("2")') 2
+   button.classDigit(type='button', value='3', onclick='pressDigit("3")') 3
    button.classDigit(type='button', value='*') *
-   button.classDigit(type='button', value='0') 0
-   button.classDigit(type='button', value='C') Clear
+   button.classDigit(type='button', value='0', onclick='pressDigit("0")') 0
+   button.classDigit(type='button', value='C', onclick='clear()') Clear
    button.classDigit(type='button', value='=') =
    button.classDigit(type='button', value='/') /
