@@ -34,13 +34,33 @@ function pressDigit(value){
 		case "9": { numString += "9"; break; }
 	}
 
-	document.GetElementById('divDisplay').innerHTML = numString;
+	setDisplay(numString);
 }
 
-//Convenience function
+//Convenience functions
 function checkNumString(){
 	if(numString == "")
 	numString = "0";
+}
+
+function setDisplay(set){
+	document.getElementById('divDisplay').innerHTML = set;
+}
+
+function disableOperations(){
+	document.getElementById('idAddition').disabled = true;
+	document.getElementById('idSubtraction').disabled = true;
+	document.getElementById('idMultiplication').disabled = true;
+	document.getElementById('idDivision').disabled = true;
+	document.getElementById('idEquals').disabled = false;
+}
+
+function disableEquals(){
+	document.getElementById('idAddition').disabled = false;
+	document.getElementById('idSubtraction').disabled = false;
+	document.getElementById('idMultiplication').disabled = false;
+	document.getElementById('idDivision').disabled = false;
+	document.getElementById('idEquals').disabled = true;
 }
 
 function addition(){
@@ -49,8 +69,9 @@ function addition(){
 		num1 = numString;
 		operation = "+";
 		numString = "";
+		disableOperations();
 	}
-	else
+	/*else
 	{
 		checkNumString();
 		http.open('get','http://localhost:3000/add?num1=' + num1 + '&num2=' + numString + '&junk=' = Math.random());
@@ -64,8 +85,9 @@ function addition(){
 		
 		num2 = "";
 		numString = "";
+		operation = "";
 		http.send(null);
-	}
+	}*/
 }
 
 function clear(){
@@ -73,6 +95,30 @@ numString = "";
 num1 = "";
 num2 = "";
 operation = "";
+setDisplay("");
+disableEquals();
+}
+
+function equals(){
+	var url = "";
+	switch(operation){
+		case "+": { url = "/add"; break; }
+		case "-": { url = "/subtract"; break; }
+		case "*": { url = "/multiply"; break; }
+		case "/": { url = "/divide"; break; }
+	}
+
+	http.open('get',url + "?num1=" + num1 + "&num2=" + numString + "&junk=" + Math.random());
+	http.onreadystatechange = handleResult();
+	http.send(null);	
+}
+
+function handleResult(){
+	if(http.readyState == 4){
+		var response = http.responseText;
+		clear();
+		setDisplay(response);
+	}
 }
 
 function testAjax(a){
