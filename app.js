@@ -57,7 +57,13 @@ app.get('/add', function(req, res){
 
 });
 
+app.get('/test', function(req, res){
+  //localhost:3000/test
+  var a = req.query.a;
 
+  console.log(a);
+  res.send(a);
+});
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
