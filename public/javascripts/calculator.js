@@ -20,9 +20,9 @@ function createRequestObject(){
 var http = createRequestObject();
 
 
-//Exports
-exports = module.exports = {};
-
+//Exports (Only for express?)
+//exports = module.exports = {};
+/*
 exports.check = function(value){
 	switch(value){
 		case "0": { numString += "0"; break; }
@@ -37,4 +37,12 @@ exports.check = function(value){
 		case "9": { numString += "9"; break; }
 	}
 }
+*/
 
+function testalert(){
+alert("OK");
+}
+
+function testalert2(){
+alert("ALSO OK");
+}

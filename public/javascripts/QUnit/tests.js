@@ -1,5 +1,6 @@
-require('../calculator.js');
+var calculator = require('../calculator.js');
 
-test("HelloWorld Test", function() {
-  ok( 1 == "1", "Passed!");
+test("Single Digit Test", function() {
+	calculator.check("0");
+  	ok(calculator.numString == "0", "Passed!");
 });
