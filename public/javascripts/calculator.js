@@ -90,7 +90,7 @@ function addition(){
 	}*/
 }
 
-function clear(){
+function calClear(){
 numString = "";
 num1 = "";
 num2 = "";
@@ -109,7 +109,7 @@ function equals(){
 	}
 
 	http.open('get',url + "?num1=" + num1 + "&num2=" + numString + "&junk=" + Math.random());
-	http.onreadystatechange = handleResult();
+	http.onreadystatechange = handleResult;
 	http.send(null);	
 }
 
