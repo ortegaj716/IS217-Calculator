@@ -2,6 +2,7 @@ extends layout
 
 block content
   h1 IS217 Calculator
+  h2 Joshua Ortega
   #divWrapper
    #divDisplay
    button.classDigit(type='button', value='7', onclick='pressDigit("7")') 7
@@ -11,12 +12,12 @@ block content
    button.classDigit(type='button', value='4', onclick='pressDigit("4")') 4
    button.classDigit(type='button', value='5', onclick='pressDigit("5")') 5
    button.classDigit(type='button', value='6', onclick='pressDigit("6")') 6
-   button.classDigit#idSubtraction(type='button', value='-') -
+   button.classDigit#idSubtraction(type='button', value='-', onclick='subtraction()') -
    button.classDigit(type='button', value='1', onclick='pressDigit("1")') 1
    button.classDigit(type='button', value='2', onclick='pressDigit("2")') 2
    button.classDigit(type='button', value='3', onclick='pressDigit("3")') 3
-   button.classDigit#idMultiplication(type='button', value='*') *
+   button.classDigit#idMultiplication(type='button', value='*', onclick='multiplication()') *
    button.classDigit(type='button', value='0', onclick='pressDigit("0")') 0
    button.classDigit(type='button', value='C', onclick='calClear()') Clear
    button.classDigit#idEquals(type='button', value='=', disabled='true', onclick='equals()') =
-   button.classDigit#idDivision(type='button', value='/') /
+   button.classDigit#idDivision(type='button', value='/', onclick='division()') /
