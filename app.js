@@ -57,6 +57,43 @@ app.get('/add', function(req, res){
 
 });
 
+app.get('/subtract', function(req, res){
+  //localhost:3000/letsadd?num1=1&num2=1
+  var num1 = parseInt(req.query.num1,10);
+  var num2 = parseInt(req.query.num2,10);
+
+  var sum = math.subtract(num1,num2);
+
+  console.log(sum);
+  res.send(sum.toString());
+
+});
+
+app.get('/multiply', function(req, res){
+  //localhost:3000/letsadd?num1=1&num2=1
+  var num1 = parseInt(req.query.num1,10);
+  var num2 = parseInt(req.query.num2,10);
+
+  var sum = math.multiply(num1,num2);
+
+  console.log(sum);
+  res.send(sum.toString());
+
+});
+
+app.get('/divide', function(req, res){
+  //localhost:3000/letsadd?num1=1&num2=1
+  var num1 = parseInt(req.query.num1,10);
+  var num2 = parseInt(req.query.num2,10);
+
+  var sum = math.divide(num1,num2);
+
+  console.log(sum);
+  res.send(sum.toString());
+
+});
+
+
 app.get('/test', function(req, res){
   //localhost:3000/test
   var a = req.query.a;
