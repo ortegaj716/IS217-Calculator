@@ -122,7 +122,7 @@ function equals(){
 		case "*": { url = "/multiply"; break; }
 		case "/": { url = "/divide"; break; }
 	}
-
+	checkNumString();
 	http.open('get',url + "?num1=" + num1 + "&num2=" + numString + "&junk=" + Math.random());
 	http.onreadystatechange = handleResult;
 	http.send(null);	
